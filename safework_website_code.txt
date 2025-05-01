@@ -1,0 +1,123 @@
+
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800 p-6 space-y-10">
+      {/* Hero Section */}
+      <section className="text-center py-20 bg-green-100 rounded-2xl shadow-md">
+        <h1 className="text-4xl font-bold mb-4">Welcome to SafeWork Consultancy</h1>
+        <p className="text-lg max-w-2xl mx-auto">
+          Your trusted partner in Occupational Health and Safety (OHS) compliance,
+          training, and risk management.
+        </p>
+        <Button className="mt-6">Get in Touch</Button>
+      </section>
+
+      {/* About Section */}
+      <section className="grid gap-6 md:grid-cols-2 items-center">
+        <div>
+          <h2 className="text-2xl font-semibold mb-2">About Us</h2>
+          <p>
+            SafeWork Consultancy is a Bhutan-based Occupational Health and Safety firm dedicated to creating safer work environments across industries.
+            We offer expert guidance, compliance audits, customized trainings, and OHS system development.
+          </p>
+        </div>
+        <img
+          src="/images/ohs-training.jpg"
+          alt="OHS Training"
+          className="rounded-xl shadow-md"
+        />
+      </section>
+
+      {/* Services Section */}
+      <section>
+        <h2 className="text-2xl font-semibold text-center mb-6">Our Services</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { title: "OHS Compliance Audits", desc: "Ensure your workplace meets regulatory safety standards." },
+            { title: "Training & Certification", desc: "Customized safety training for workers, supervisors, and management." },
+            { title: "Risk Assessment & Advisory", desc: "Identify, evaluate, and control workplace hazards effectively." },
+          ].map((service, i) => (
+            <Card key={i} className="rounded-2xl shadow-sm">
+              <CardContent className="p-4">
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p>{service.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-gray-50 p-6 rounded-2xl shadow-md">
+        <h2 className="text-2xl font-semibold text-center mb-6">What Our Clients Say</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card>
+            <CardContent className="p-4">
+              <p className="italic">“SafeWork Consultancy transformed our workplace culture. Their training was engaging and practical.”</p>
+              <p className="mt-2 font-bold">— Tshering, Factory Manager</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <p className="italic">“Professional, thorough, and highly recommended for any business serious about safety.”</p>
+              <p className="mt-2 font-bold">— Karma, HR Executive</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section>
+        <h2 className="text-2xl font-semibold text-center mb-6">Latest Insights</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {["5 Common Safety Gaps in Small Businesses", "Why Risk Assessments Matter", "How to Build a Safety-First Culture"].map((title, i) => (
+            <Card key={i} className="rounded-2xl shadow-sm">
+              <CardContent className="p-4">
+                <h3 className="text-xl font-bold mb-2">{title}</h3>
+                <p className="text-sm text-gray-600">Read more...</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Brochure Download */}
+      <section className="bg-green-50 text-center p-8 rounded-2xl shadow-md">
+        <h2 className="text-2xl font-semibold mb-2">Download Our Company Profile</h2>
+        <p className="mb-4">Learn more about our services and how we can support your workplace safety goals.</p>
+        <Button>Download Brochure (PDF)</Button>
+      </section>
+
+      {/* Contact Section */}
+      <section className="bg-gray-100 rounded-2xl p-6 shadow-md">
+        <h2 className="text-2xl font-semibold text-center mb-4">Contact Us</h2>
+        <form className="max-w-xl mx-auto grid gap-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="border rounded p-2 w-full"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="border rounded p-2 w-full"
+          />
+          <textarea
+            placeholder="Your Message"
+            className="border rounded p-2 w-full h-32"
+          ></textarea>
+          <Button className="w-full">Send Message</Button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-500 pt-10">
+        &copy; {new Date().getFullYear()} SafeWork Consultancy. All rights reserved.
+      </footer>
+    </div>
+  );
+}
